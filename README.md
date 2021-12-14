@@ -26,5 +26,5 @@ The christmas card that was writen in 2009 shows a “caganer”
 
 ``` r
 library(christmas)
-xmas2009caganer()
+xmascaganer()
 ```

@@ -1,22 +1,27 @@
-#' @title Christmas card 2010.
+#' @title Christmas message.
 #'
-#' @description Christmas card 2010: random allocation of repetitions of the Christmas message.
+#' @description A random repetition of a message (2010 card). Random allocation
+#'   of repetitions of the Christmas message.
 #'
 #' @param year Year to be printed. Default is \code{2011}.
-#' @param language Language to be used in the card. One of \code{c("english", "spanish", "catalan")}. Default is \code{"english"}.
-#' @param seed Seed for reproducibility of the card. Default is \code{NULL} (no seed).
-#' @return A Christmas card plot including the repetition of the same message randomly allocated.
+#' @param language Language to be used in the card. One of \code{c("english",
+#'   "spanish", "catalan")}. Default is \code{"english"}.
+#' @param seed Seed for reproducibility of the card. Default is \code{NULL} (no
+#'   seed).
+#' @return A Christmas card plot including the repetition of the same message
+#'   randomly allocated.
 #' @author Jose Barrera-Gomez.
 #' @examples
 #' \donttest{
-#' xmas2010text()
-#' xmas2010text(year = 2020, language = "spanish", seed = 666)
+#' xmastext()
+#' xmastext(year = 2020, language = "spanish", seed = 666)
 #' }
 #' @export
 
 
-xmas2010text <- function(year = 2011, language = c("english", "spanish", "catalan"), seed = NULL)
-{
+xmastext <- function(year = 2011,
+                     language = c("english", "spanish", "catalan"),
+                     seed = NULL) {
   # "year":
   if (!inherits(year, c("numeric", "integer")) || length(year) != 1L)
     stop("'year' must be a number")

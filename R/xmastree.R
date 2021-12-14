@@ -1,22 +1,26 @@
-#' @title Christmas card 2008.
+#' @title Naive Christmas tree.
 #'
-#' @description Christmas card 2008: a random Christmas tree.
+#' @description A random naive Christmas tree (2008 card).
 #'
 #' @param year Year to be printed. Default is \code{2009}.
-#' @param language Language to be used in the card. One of \code{c("english", "spanish", "catalan")}. Default is \code{"english"}.
-#' @param seed Seed for reproducibility of the card. Default is \code{NULL} (no seed).
+#' @param language Language to be used in the card. One of \code{c("english",
+#'   "spanish", "catalan")}. Default is \code{"english"}.
+#' @param seed Seed for reproducibility of the card. Default is \code{NULL} (no
+#'   seed).
 #' @return A Christmas card plot including a random tree.
 #' @author Jose Barrera-Gomez.
 #' @examples
 #' \donttest{
-#' xmas2008tree()
-#' xmas2008tree(year = 2020, language = "catalan")
-#' xmas2008tree(year = 2020, language = "spanish", seed = 666)
+#' xmastree()
+#' xmastree(year = 2020, language = "catalan")
+#' xmastree(year = 2020, language = "spanish", seed = 666)
 #' }
 #' @export
 
 
-xmas2008tree <- function(year = 2009, language = c("english", "spanish", "catalan"), seed = NULL) {
+xmastree <- function(year = 2009,
+                     language = c("english", "spanish", "catalan"),
+                     seed = NULL) {
   # "year":
   if (!inherits(year, c("numeric", "integer")) || length(year) != 1L)
     stop("'year' must be a number")

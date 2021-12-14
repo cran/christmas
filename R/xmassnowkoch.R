@@ -1,18 +1,21 @@
-#' @title Christmas card 2012.
+#' @title Koch snowflakes.
 #'
-#' @description Christmas card 2012: Koch snowflakes (https://en.wikipedia.org/wiki/Koch_snowflake) are used to print the Christmas message in three languages (English, Catalan and Spanish).
+#' @description Koch snowflakes (2012 card). Koch snowflakes
+#'   (https://en.wikipedia.org/wiki/Koch_snowflake) are used to print the
+#'   Christmas message in three languages (English, Catalan and Spanish).
 #'
 #' @param year Year to be printed. Default is \code{2013}.
-#' @param seed Seed for reproducibility of the card. Default is \code{NULL} (no seed).
+#' @param seed Seed for reproducibility of the card. Default is \code{NULL} (no
+#'   seed).
 #' @return A Christmas card plot including Koch snowflakes.
 #' @author Jose Barrera-Gomez.
 #' @examples
 #' \donttest{
-#' xmas2012snowkoch()
+#' xmassnowkoch()
 #' }
 #' @export
 
-xmas2012snowkoch <- function(year = 2013, seed = NULL) {
+xmassnowkoch <- function(year = 2013, seed = NULL) {
   # "year":
   if (!inherits(year, c("numeric", "integer")) || length(year) != 1L)
     stop("'year' must be a number")

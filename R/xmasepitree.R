@@ -1,19 +1,22 @@
-#' @title Christmas card 2016.
+#' @title Christmas epitree.
 #'
-#' @description Christmas card 2016: a statistical/epidemiological Christmas tree. This tree is built using a random subset of statistical and epidemiological words.
+#' @description A statistical/epidemiological Christmas tree (2016 card). This
+#'   tree is built using a random subset of statistical and epidemiological
+#'   words.
 #'
 #' @param year Year to be printed. Default is \code{2017}.
-#' @param seed Seed for reproducibility of the card. Default is \code{NULL} (no seed).
+#' @param seed Seed for reproducibility of the card. Default is \code{NULL} (no
+#'   seed).
 #' @return A Christmas card plot including a tree made of nice words.
 #' @author Jose Barrera-Gomez.
 #' @examples
 #' \donttest{
-#' xmas2016epi()
-#' xmas2016epi(year = 2020)
+#' xmasepitree()
+#' xmasepitree(year = 2020)
 #' }
 #' @export
 
-xmas2016epi <- function(year = 2017, seed = NULL) {
+xmasepitree <- function(year = 2017, seed = NULL) {
   # "year":
   if (!inherits(year, c("numeric", "integer")) || length(year) != 1L)
     stop("'year' must be a number")

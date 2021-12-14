@@ -1,24 +1,26 @@
-#' @title Christmas card 2019.
+#' @title Christmas regression model.
 #'
-#' @description Christmas card 2019: a Christmas regression model.
+#' @description A plot of the Christmas regression model (2019 card).
 #'
 #' @param year Year to be printed. Default is \code{2020}.
-#' @param language Language to be used in the card. One of \code{c("english", "spanish", "catalan")}. Default is \code{"english"}.
+#' @param language Language to be used in the card. One of \code{c("english",
+#'   "spanish", "catalan")}. Default is \code{"english"}.
 #' @param time Total time, in seconds, for the card generation. Default is 12.
-#' @param seed Seed for reproducibility of the card. Default is \code{NULL} (no seed).
+#' @param seed Seed for reproducibility of the card. Default is \code{NULL} (no
+#'   seed).
 #' @return An illustration of the Christmas regression model.
 #' @author Jose Barrera-Gomez.
 #' @examples
 #' \donttest{
-#' xmas2019regression()
-#' xmas2019regression(year = 2021, language = "catalan", time = 5)
+#' xmasregression()
+#' xmasregression(year = 2021, language = "catalan", time = 5)
 #' }
 #' @export
 
-xmas2019regression <- function(year = 2020,
-                               language = c("english", "spanish", "catalan"),
-                               time = 12,
-                               seed = NULL) {
+xmasregression <- function(year = 2020,
+                           language = c("english", "spanish", "catalan"),
+                           time = 12,
+                           seed = NULL) {
   # "year":
   if (!inherits(year, c("numeric", "integer")) || length(year) != 1L)
     stop("'year' must be a number")

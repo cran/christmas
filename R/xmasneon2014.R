@@ -1,23 +1,30 @@
-#' @title Christmas card 2013.
+#' @title Neon Christmas card.
 #'
-#' @description Christmas card 2013: a neon sign.
+#' @description Christmas card using a neon sign. It only works for wishing 2014.
 #'
-#' @param language Language to be used in the card. One of \code{c("english", "spanish", "catalan")}. Default is \code{"english"}.
+#' @param language Language to be used in the card. One of \code{c("english",
+#'   "spanish", "catalan")}. Default is \code{"english"}.
 #' @param nflash Number of flashes shown in the neon sign. Default is 30.
-#' @param pause Pause, in seconds, between two consecutive flashes shown in the neon sign. Default is 0.1.
-#' @param seed Seed for reproducibility of the card. Default is \code{NULL} (no seed).
-#' @return A Christmas card plot including a message and then a simulations of a neon sign.
+#' @param pause Pause, in seconds, between two consecutive flashes shown in the
+#'   neon sign. Default is 0.1.
+#' @param seed Seed for reproducibility of the card. Default is \code{NULL} (no
+#'   seed).
+#' @return A Christmas card plot including a message and then a simulations of a
+#'   neon sign.
 #' @author Jose Barrera-Gomez.
 #' @examples
 #' \donttest{
-#' xmas2013neon()
-#' xmas2013neon(language = "catalan", nflash = 10, pause = 0.3)
-#' xmas2013neon(language = "spanish", nflash = 8, pause = 1)
-#' xmas2013neon(nflash = 100, pause = 0.02)
+#' xmasneon2014()
+#' xmasneon2014(language = "catalan", nflash = 10, pause = 0.3)
+#' xmasneon2014(language = "spanish", nflash = 8, pause = 1)
+#' xmasneon2014(nflash = 100, pause = 0.02)
 #' }
 #' @export
 
-xmas2013neon <- function(language = c("english", "spanish", "catalan"), nflash = 30, pause = 0.1, seed = NULL) {
+xmasneon2014 <- function(language = c("english", "spanish", "catalan"),
+                         nflash = 30,
+                         pause = 0.1,
+                         seed = NULL) {
   # "language":
   language <- match.arg(language)
   # "nflash":

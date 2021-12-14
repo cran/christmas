@@ -1,27 +1,32 @@
-#' @title Christmas card 2017.
+#' @title Christmas shaped tree.
 #'
-#' @description Christmas card 2017: Christmas trees with different shapes.
+#' @description Christmas trees (2017 card) with different shapes.
 #'
 #' @param year Year to be printed. Default is \code{2018}.
-#' @param language Language to be used in the card. One of \code{c("english", "spanish", "catalan")}. Default is \code{"english"}.
-#' @param shape The shape of the tree. One of \code{c("piramidal", "oval", "vshaped", "round", "columnar")}. Default is \code{"piramidal"}.
+#' @param language Language to be used in the card. One of \code{c("english",
+#'   "spanish", "catalan")}. Default is \code{"english"}.
+#' @param shape The shape of the tree. One of \code{c("piramidal", "oval",
+#'   "vshaped", "round", "columnar")}. Default is \code{"piramidal"}.
 #' @param nballs The number of balls in the tree. Default is 15.
-#' @param ballscolor The colors to be used for the balls in the tree. It must be a vector with names of colors included in \code{colors()}, or \code{NULL} (default). If \code{NULL}, then colors are randomly selected.
-#' @param seed Seed for reproducibility of the card. Default is \code{NULL} (no seed).
+#' @param ballscolor The colors to be used for the balls in the tree. It must be
+#'   a vector with names of colors included in \code{colors()}, or \code{NULL}
+#'   (default). If \code{NULL}, then colors are randomly selected.
+#' @param seed Seed for reproducibility of the card. Default is \code{NULL} (no
+#'   seed).
 #' @return A Christmas card plot including a christmas tree.
 #' @author Jose Barrera-Gomez.
 #' @examples
 #' \donttest{
-#' xmas2017trees()
-#' xmas2017trees(shape = "oval", language = "catalan", ballscolor = "blue")
-#' xmas2017trees(shape = "vshaped", nballs = 15, ballscolor = c("sienna2", "yellow2", "tomato"),
+#' xmastreeshape()
+#' xmastreeshape(shape = "oval", language = "catalan", ballscolor = "blue")
+#' xmastreeshape(shape = "vshaped", nballs = 15, ballscolor = c("sienna2", "yellow2", "tomato"),
 #'               seed = 1111)
-#' xmas2017trees(shape = "round", language = "spanish")
-#' xmas2017trees(shape = "columnar", nballs = 20, ballscolor = "red")
+#' xmastreeshape(shape = "round", language = "spanish")
+#' xmastreeshape(shape = "columnar", nballs = 20, ballscolor = "red")
 #' }
 #' @export
 
-xmas2017trees <- function(year = 2018,
+xmastreeshape <- function(year = 2018,
                           language = c("english", "spanish", "catalan"),
                           shape = c("piramidal", "oval", "vshaped", "round", "columnar"),
                           nballs = 15,

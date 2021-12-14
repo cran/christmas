@@ -1,21 +1,25 @@
-#' @title Christmas card 2015.
+#' @title Christmas flag.
 #'
-#' @description Christmas card 2015: a flag
+#' @description Christmas flag (2015 card). A flag with a Christmas message.
 #'
 #' @param year Year to be printed. Default is \code{2016}.
-#' @param language Language to be used in the card. One of \code{c("english", "spanish", "catalan")}. Default is \code{"english"}.
-#' @param seed Seed for reproducibility of the card. Default is \code{NULL} (no seed).
+#' @param language Language to be used in the card. One of \code{c("english",
+#'   "spanish", "catalan")}. Default is \code{"english"}.
+#' @param seed Seed for reproducibility of the card. Default is \code{NULL} (no
+#'   seed).
 #' @return A Christmas card plot including a message in a flag.
 #' @author Jose Barrera-Gomez.
 #' @examples
 #' \donttest{
-#' xmas2015flag()
-#' xmas2015flag(year = 2020, language = "catalan")
-#' xmas2015flag(year = 2020, language = "spanish")
+#' xmasflag()
+#' xmasflag(year = 2020, language = "catalan")
+#' xmasflag(year = 2020, language = "spanish")
 #' }
 #' @export
 
-xmas2015flag <- function(year = 2016, language = c("english", "spanish", "catalan"), seed = NULL) {
+xmasflag <- function(year = 2016,
+                     language = c("english", "spanish", "catalan"),
+                     seed = NULL) {
   # "year":
   if (!inherits(year, c("numeric", "integer")) || length(year) != 1L)
     stop("'year' must be a number")

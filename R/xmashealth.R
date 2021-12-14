@@ -1,17 +1,23 @@
-#' @title Christmas card 2011.
+#' @title Christmas risks.
 #'
-#' @description Christmas card 2011: some epidemiological jokes about potential effects of Christmas on health.
+#' @description Christmas risks (2011 card). Some epidemiological jokes about
+#'   potential effects of Christmas on health.
 #'
-#' @param seed Seed for reproducibility of the card. Default is \code{NULL} (no seed).
+#' @param year Year to be printed. Default is \code{2012}.
+#' @param seed Seed for reproducibility of the card. Default is \code{NULL} (no
+#'   seed).
 #' @return A Christmas card plot including boxplots and OR estimates.
 #' @author Jose Barrera-Gomez.
 #' @examples
 #' \donttest{
-#' xmas2011health()
+#' xmashealth()
 #' }
 #' @export
 
-xmas2011health <- function(seed = NULL) {
+xmashealth <- function(year = 2012, seed = NULL) {
+  # "year":
+  if (!inherits(year, c("numeric", "integer")) || length(year) != 1L)
+    stop("'year' must be a number")
   # "seed":
   if(!is.null(seed) & (is.na(seed) || !is(seed, "numeric")))
     stop("'seed' must be numeric or NULL")
@@ -44,5 +50,7 @@ xmas2011health <- function(seed = NULL) {
   axis(2, at = 1:3, labels = labs, cex.axis = 0.8)
   abline(v = 1, lty = 2, col = "blue", lwd = 2)
   segments(ORs[, 2], 1:3, ORs[, 3], 1:3, lwd = 3, col = "blue")
-  title("I wish you a statistically non significant chRistmas!", outer = TRUE, cex.main = 1.3, col.main = "forestgreen")
+  tit <- paste0("I wish you a statistically non significant chRistmas and a happy ",
+                year, "!")
+  title(tit, outer = TRUE, cex.main = 1.3, col.main = "forestgreen")
 }

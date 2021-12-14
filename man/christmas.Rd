@@ -3,10 +3,11 @@
 \docType{package}
 \name{christmas}
 \alias{christmas}
-\alias{christmas-package}
-\title{christmas: A package for creating a number of Christmas cards.}
+\title{christmas: Generation of Different Animated Christmas Cards}
 \description{
-This is a collection of Christmas cards, mostly of them being animated. The name of each card includes the year in which it was created.
+Generation of different Christmas cards, most of them being
+    animated. Most of the cards can be generated in three languages (English,
+    Catalan and Spanish). The collection started in 2009.
 }
 \author{
 Jose Barrera-Gomez \email{jose.barrera@isglobal.org}

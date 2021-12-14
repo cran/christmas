@@ -1,23 +1,42 @@
-#' @title Christmas card 2009.
+#' @title Caganer.
 #'
-#' @description Christmas card 2009: a 'caganer'. Caganer is is a figurine depicted in the act of defecation appearing in nativity scenes in Catalonia and neighbouring areas with Catalan culture such as Andorra, Valencia, and Northern Catalonia (in southern France). It is most popular and widespread in these areas, but can also be found in other areas of Spain (Murcia), Portugal, and southern Italy (Naples). Further details can be found at \url{https://en.wikipedia.org/wiki/Caganer}. This caganer won the annual contest of sustainable caganers at CREAL (now ISGlobal, \url{https://www.isglobal.org/en/}) in 2009.
+#' @description A Catalan 'caganer' (2009 card). Caganer is a figurine depicted
+#'   in the act of defecation appearing in nativity scenes in Catalonia and
+#'   neighbouring areas with Catalan culture such as Andorra, Valencia, and
+#'   Northern Catalonia (in southern France). It is most popular and widespread
+#'   in these areas, but can also be found in other areas of Spain (Murcia),
+#'   Portugal, and southern Italy (Naples). Further details can be found at
+#'   \url{https://en.wikipedia.org/wiki/Caganer}. This caganer won the annual
+#'   contest of sustainable caganers at CREAL (now ISGlobal,
+#'   \url{https://www.isglobal.org/en/}) in 2009.
 #'
-#' @param seed Seed for reproducibility of the card. Default is \code{NULL} (no seed).
+#' @param year Year to be printed. Default is \code{2010}.
+#' @param language Language to be used in the card. One of \code{c("english",
+#'   "spanish", "catalan")}. Default is \code{"english"}.
+#' @param seed Seed for reproducibility of the card. Default is \code{NULL} (no
+#'   seed).
 #' @return A Christmas card plot with a caganer.
 #' @author Jose Barrera-Gomez.
 #' @examples
 #' \donttest{
-#' xmas2009caganer()
+#' xmascaganer()
 #' }
 #' @export
 
-xmas2009caganer <- function(seed = NULL) {
+xmascaganer <- function(year = 2010,
+                        language = c("english", "spanish", "catalan"),
+                        seed = NULL) {
+  # "year":
+  if (!inherits(year, c("numeric", "integer")) || length(year) != 1L)
+    stop("'year' must be a number")
+  # "language":
+  language <- match.arg(language)
   # "seed":
   if(!is.null(seed) & (is.na(seed) || !is(seed, "numeric")))
     stop("'seed' must be numeric or NULL")
   if (!is.null(seed)) set.seed(seed)
 
-  t <- 0.8
+  t <- 0.3
 
   # Background:
   newwindow()
@@ -25,7 +44,6 @@ xmas2009caganer <- function(seed = NULL) {
   u <- runif(2000, -6, 9)
   v <- runif(2000, -4, 10)
   plot(u, v, type = "n", xlim = c(-6, 9), ylim = c(-4, 10), asp = 1, axes = F, xlab = "", ylab = "")
-  title(main = "CREAL (CaganeR Ecologic i ALeatoritzat)", col.main = "forestgreen", cex.main = 1.5)
   polygon(c(-6, -6, 9, 9), c(-4, 1, 1, -4), border = NA, col = "azure2")
   polygon(c(-6, -6, 9, 9), c(1, 10, 10, 1), border = NA, col = "darkblue")
   lines(u[1:500], v[1:500], type = "p", pch = 8, lwd = 1, cex = 0.1, col = rainbow(180)[90])
@@ -179,12 +197,31 @@ xmas2009caganer <- function(seed = NULL) {
   lines(x, rnorm(length(x), 6.2, 0.1), col = "white", lwd = 15)
   # Text:
   Sys.sleep(t)
-  x <- c(3.0, 4.0, 4.8, 5.4, 6.1, 2.8, 3.9, 4.7, 5.7, 6.5,  6.8)
-  y <- c(8.0, 7.6, 8.0, 7.6, 7.7, 6.3, 5.7, 6.3, 5.7, 6.2, -3.2)
-  ms <- c("H", "a", "p", "p", "y", "2", "0", "1", "0", "!", "www.creal.cat")
-  col.text <- c(rep("red", 6), rep("forestgreen", 3), rep("red", 2))
-  mida <- c(rep(4, 6), rep(5, 3), 4, 1)
-  for (i in 1:11) text(x[i], y[i], ms[i], col = col.text[i], cex = mida[i], font = 1)
+  xmess <- 4.8 + (-2:2) * 1.27
+  xyear <- 4.8 + (-2:2)
+
+  if (language == "catalan")
+    xmess <- xmess[2:4]
+  x <- c(xmess, xyear)
+
+  ymess <- c(8.0, 7.6, 8.0, 7.6, 7.7)
+  if (language == "catalan")
+    ymess <- ymess[2:4]
+  yyear <- c(6.3, 5.7, 6.3, 5.7, 6.2)
+  y <- c(ymess, yyear)
+
+  mess <- switch(language, english = "HAPPY", spanish = "FELIZ",
+                 catalan = "BON")
+  messsplit <- unlist(strsplit(mess, ""))
+  yearsplit <- unlist(strsplit(paste0(year, "!"), ""))
+  ms <- c(messsplit, yearsplit)
+  col.text <- c(rep("red", length(messsplit)),
+                rep("forestgreen", length(yearsplit)))
+  mida <- 4 #c(rep(4, 6), rep(5, 3), 4, 1)
+  for (i in 1:11)
+    text(x[i], y[i], ms[i], col = col.text[i],
+         cex = mida, #mida[i],
+         font = 1)
   # More snow:
   Sys.sleep(t)
   lines(u[501:2000], v[501:2000], type = "p", pch = 8, lwd = 1, cex = 0.05, col = "white")

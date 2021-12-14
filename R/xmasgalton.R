@@ -1,36 +1,44 @@
-#' @title Christmas card 2018.
+#' @title Christmas Galton card.
 #'
-#' @description Christmas card 2018: a Christmas tree in the Galton board. This is an adaptation of \code{quincunx()} in package \code{animation}, which simulates the Galton board (\url{https://en.wikipedia.org/wiki/Bean_machine}).
+#' @description Christmas Galton card (2018). A Christmas tree in the Galton
+#'   board. This is an adaptation of \code{quincunx()} in package
+#'   \code{animation}, which simulates the Galton board
+#'   (\url{https://en.wikipedia.org/wiki/Bean_machine}).
 #'
 #' @param year Year to be printed. Default is \code{2019}.
-#' @param language Language to be used in the card. One of \code{c("english", "spanish", "catalan")}. Default is \code{"english"}.
+#' @param language Language to be used in the card. One of \code{c("english",
+#'   "spanish", "catalan")}. Default is \code{"english"}.
 #' @param balls The number of balls in the board. Default is 240.
 #' @param layers The number of layers in the board. Default is 15.
-#' @param onlyBoard Logical. If \code{FALSE} (default), an empirical Christmas normal tree estimated from data is added to the histogram.
-#' @param treeballs The number of balls to be added to the Christmas normal tree. Default is 15.
-#' @param time Elapsed time, in seconds, between two consecutive balls in the board. Default is 0.02.
-#' @param seed Seed for reproducibility of the card. Default is \code{NULL} (no seed).
+#' @param onlyBoard Logical. If \code{FALSE} (default), an empirical Christmas
+#'   normal tree estimated from data is added to the histogram.
+#' @param treeballs The number of balls to be added to the Christmas normal
+#'   tree. Default is 15.
+#' @param time Elapsed time, in seconds, between two consecutive balls in the
+#'   board. Default is 0.02.
+#' @param seed Seed for reproducibility of the card. Default is \code{NULL} (no
+#'   seed).
 #' @return A Christmas tree in a Galton board.
 #' @author Jose Barrera-Gomez.
 #' @examples
 #' \donttest{
-#' xmas2018galton()
+#' xmasgalton()
 #' # more balls, less layers:
-#' xmas2018galton(balls = 300, layers = 9)
+#' xmasgalton(balls = 300, layers = 9)
 #' # no balls in the gaussian christmas tree:
-#' xmas2018galton(balls = 400, layers = 11, time = 0.005, treeballs = 0)
+#' xmasgalton(balls = 400, layers = 11, time = 0.005, treeballs = 0)
 #' }
 #' @export
 #' @import animation
 
-xmas2018galton <- function(year = 2019,
-                           language = c("english", "spanish", "catalan"),
-                           balls = 240,
-                           layers = 15,
-                           onlyBoard = FALSE,
-                           treeballs = 15,
-                           time = 0.02,
-                           seed = NULL) {
+xmasgalton <- function(year = 2019,
+                       language = c("english", "spanish", "catalan"),
+                       balls = 240,
+                       layers = 15,
+                       onlyBoard = FALSE,
+                       treeballs = 15,
+                       time = 0.02,
+                       seed = NULL) {
   # "year":
   if (!inherits(year, c("numeric", "integer")) || length(year) != 1L)
     stop("'year' must be a number")

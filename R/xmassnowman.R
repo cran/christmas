@@ -1,6 +1,6 @@
-#' @title Christmas card 2014.
+#' @title Christmas snowman.
 #'
-#' @description Christmas card 2014: a snowman.
+#' @description Christmas snowman (2014 card).
 #'
 #' @param year Year to be printed. Default is \code{2015}.
 #' @param language Language to be used in the card. One of \code{c("english", "spanish", "catalan")}. Default is \code{"english"}.
@@ -9,13 +9,15 @@
 #' @author Jose Barrera-Gomez.
 #' @examples
  #' \donttest{
-#' xmas2014snowman()
-#' xmas2014snowman(year = 2020, language = "catalan")
-#' xmas2014snowman(year = 2020, language = "spanish")
+#' xmassnowman()
+#' xmassnowman(year = 2020, language = "catalan")
+#' xmassnowman(year = 2020, language = "spanish")
 #' }
 #' @export
 
-xmas2014snowman <- function(year = 2015, language = c("english", "spanish", "catalan"), seed = NULL) {
+xmassnowman <- function(year = 2015,
+                        language = c("english", "spanish", "catalan"),
+                        seed = NULL) {
   # "year":
   if (!inherits(year, c("numeric", "integer")) || length(year) != 1L)
     stop("'year' must be a number")
