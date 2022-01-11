@@ -40,12 +40,11 @@ xmastreeshape <- function(year = 2018,
   # "shape":
   shape <- match.arg(shape)
   # "nballs":
-  if (!inherits(nballs, c("numeric", "integer")) || length(nballs) != 1L || nballs <= 0)
-    stop("'nballs' must be a non negative number")
+  if (!inherits(nballs, c("numeric", "integer")) || length(nballs) != 1L || nballs < 0)
+    stop("'nballs' must be a non negative integer")
   # "ballscolor":
-  if(!is.null(ballscolor) & (is.na(ballscolor) || !all(ballscolor %in% colors())))
-    stop("'seed' must be numeric or NULL")
-  if (!is.null(seed)) set.seed(seed)
+  if(!is.null(ballscolor) & (anyNA(ballscolor) || !all(ballscolor %in% grDevices::colors())))
+    stop("'ballscolor' must be NULL or valid R color(s)")
   # "seed":
   if(!is.null(seed) & (is.na(seed) || !is(seed, "numeric")))
     stop("'seed' must be numeric or NULL")
@@ -72,7 +71,8 @@ xmastreeshape <- function(year = 2018,
   plottrunk()
   ##############
   if (is.null(ballscolor))
-   ballscolor <- c("cornflowerblue", "blue", "darkgoldenrod1", "darkmagenta", "yellow", "violet", "red", "darkorchid1", "gold1")
+   ballscolor <- c("cornflowerblue", "blue", "darkgoldenrod1", "darkmagenta",
+                   "yellow", "violet", "red", "darkorchid1", "gold1")
   switch(shape,
          piramidal = plotTreePiramidal(nballs = nballs, ballscolor = ballscolor),
          oval = plotTreeOval(nballs = nballs, ballscolor = ballscolor),
@@ -80,8 +80,7 @@ xmastreeshape <- function(year = 2018,
          round = plotTreeRound(nballs = nballs, ballscolor = ballscolor),
          columnar = plotTreeColumnar(nballs = nballs, ballscolor = ballscolor))
   ##############
-  for(i in 1:40)
-   {
+  for(i in 1:40) {
     snow(np = 20, x0 = xmin, x1 = xmax, y0 = ymin, y1 = ymax)
     Sys.sleep(0.1)
    }

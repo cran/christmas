@@ -1,7 +1,7 @@
 Package: christmas
 Type: Package
 Title: Generation of Different Animated Christmas Cards
-Version: 1.1.0
+Version: 1.1.1
 Depends: R (>= 4.1)
 Imports: animation (>= 2.6), grDevices, graphics, stats, methods
 Author: Jose Barrera-Gomez
@@ -16,6 +16,6 @@ RoxygenNote: 7.1.1
 Suggests: testthat (>= 3.0.0)
 Config/testthat/edition: 3
 NeedsCompilation: no
-Packaged: 2021-12-14 13:06:58 UTC; jose
+Packaged: 2022-01-05 18:24:48 UTC; jose
 Repository: CRAN
-Date/Publication: 2021-12-14 15:10:02 UTC
+Date/Publication: 2022-01-11 06:52:43 UTC

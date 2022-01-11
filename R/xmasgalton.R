@@ -51,7 +51,7 @@ xmasgalton <- function(year = 2019,
   if (!inherits(layers, c("numeric", "integer")) || length(layers) != 1L || layers <= 0)
     stop("'layers' must be a positive number")
   # "treeballs":
-  if (!inherits(treeballs, c("numeric", "integer")) || length(treeballs) != 1L || treeballs == 0)
+  if (!inherits(treeballs, c("numeric", "integer")) || length(treeballs) != 1L || treeballs < 0)
     stop("'treeballs' must be a non negative number")
   # "time":
   if (!inherits(time, c("numeric", "integer")) || length(time) != 1L || time <= 0)

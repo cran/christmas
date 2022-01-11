@@ -1,11 +1,19 @@
-    CHANGES IN christmas VERSION 1.0.0
+CHANGES IN christmas VERSION 1.1.1
 
-  o First version released
+  o Fixes a bug related to the argument treeballs in xmasgalton
 
-    CHANGES IN christmas VERSION 1.1.0
+
+CHANGES IN christmas VERSION 1.1.0
 
   o Changes in the names of the functions
   o Additional argument for the year in some cards
   o Changes in cards description
   o New Christmas card: xmastreewire
+
+
+CHANGES IN christmas VERSION 1.0.0
+
+  o First version released
+
+
 
