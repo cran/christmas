@@ -35,11 +35,11 @@ xmassnowkoch <- function(year = 2013, seed = NULL) {
   for (i in 1:nsnowflakes)
     polygon(randomkoch(), border = NA, col = colors[sample(1:100)])
   for (i in 1:3) {
-    Sys.sleep(1)
+    Sys.sleep(0.5)
     polygon(koch(size = 8, centerX = centers[i, 1], centerY = centers[i, 2], rotate = runif(1, 0, pi/3)), border = "blue", col = colors[sample(1:20)], lwd = 2)
    }
   for (i in 1:3) {
-    Sys.sleep(1)
+    Sys.sleep(0.5)
     text(centers[i, 1], centers[i, 2] + 0.6, message[i], col = messagecol[i], cex = mcex, family = "serif")
     text(centers[i, 1], centers[i, 2] - 0.6, paste(year, "!", sep = ""), col = messagecol[i], cex = mcex, family = "serif")
    }

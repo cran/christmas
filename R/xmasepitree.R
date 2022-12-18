@@ -12,7 +12,6 @@
 #' @examples
 #' \donttest{
 #' xmasepitree()
-#' xmasepitree(year = 2020)
 #' }
 #' @export
 
@@ -83,17 +82,18 @@ xmasepitree <- function(year = 2017, seed = NULL) {
   plot(c(xmin, xmax), c(ymin, ymax), type = "n", axes = FALSE, xlab = "", ylab = "")
   # log:
   loglabels <- c("EPIDEMIOLOGY", "STATISTICS")
-  Sys.sleep(1)
+  t <- 0.3
+  Sys.sleep(t)
   for (i in 1:length(loglabels)) {
    	text(x = 0, y = ymin + 1 + i, labels = loglabels[i], vfont = myvfont, cex = 1.7, col = "brown")
-    Sys.sleep(1)
+    Sys.sleep(t)
   }
   for (i in length(selwords):1) {
    	text(x = 0, y = ymax - ncs[i] - 2, labels = selwords[i], vfont = myvfont, cex = 2, col = "forestgreen")
-   	Sys.sleep(0.3)
+   	Sys.sleep(0.3 * t)
   }
-  Sys.sleep(0.7)
+  Sys.sleep(0.7 * t)
   text(x = 0, y = ymax - 0.5, labels = paste0("HAPPY ", year, "!"), vfont = myvfont, cex = 4, col = "red")
-  Sys.sleep(1.5)
+  Sys.sleep(1.5 * t)
   text(x = 0, y = max(ncs) + 2.5, labels = "R", srt = 15, vfont = myvfont, cex = 6, col = "gold")
 }

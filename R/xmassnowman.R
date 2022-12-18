@@ -9,9 +9,7 @@
 #' @author Jose Barrera-Gomez.
 #' @examples
  #' \donttest{
-#' xmassnowman()
-#' xmassnowman(year = 2020, language = "catalan")
-#' xmassnowman(year = 2020, language = "spanish")
+#' xmassnowman(year = 2015, language = "catalan")
 #' }
 #' @export
 
@@ -28,7 +26,7 @@ xmassnowman <- function(year = 2015,
     stop("'seed' must be numeric or NULL")
   if (!is.null(seed)) set.seed(seed)
   r <- 0.6
-  t <- 0.8
+  t <- 0.4
   # background:
   newwindow()
   Sys.sleep(0.5 * t)

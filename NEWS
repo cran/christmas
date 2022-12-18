@@ -1,3 +1,11 @@
+CHANGES IN christmas VERSION 1.2.0
+
+  o New card xmaspicasso
+  o Reduction of computation time in examples
+  o Rename xmasneon2014 to xmasneon
+  o Minor changes in documentation
+
+
 CHANGES IN christmas VERSION 1.1.1
 
   o Fixes a bug related to the argument treeballs in xmasgalton

@@ -27,9 +27,7 @@ A random wire Christmas tree (2021 card).
 }
 \examples{
 \donttest{
-xmastreewire()
-xmastreewire(year = 2020, language = "catalan")
-xmastreewire(year = 2020, language = "spanish", seed = 666)
+xmastreewire(year = 2020, language = "catalan", seed = 666)
 }
 }
 \author{

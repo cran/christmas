@@ -22,9 +22,8 @@
 #' @author Jose Barrera-Gomez.
 #' @examples
 #' \donttest{
-#' xmasgalton()
 #' # more balls, less layers:
-#' xmasgalton(balls = 300, layers = 9)
+#' xmasgalton(balls = 300, layers = 9, time = 0.01)
 #' # no balls in the gaussian christmas tree:
 #' xmasgalton(balls = 400, layers = 11, time = 0.005, treeballs = 0)
 #' }

@@ -36,7 +36,7 @@ xmascaganer <- function(year = 2010,
     stop("'seed' must be numeric or NULL")
   if (!is.null(seed)) set.seed(seed)
 
-  t <- 0.3
+  t <- 0.1
 
   # Background:
   newwindow()

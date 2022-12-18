@@ -27,9 +27,7 @@ Christmas flag (2015 card). A flag with a Christmas message.
 }
 \examples{
 \donttest{
-xmasflag()
 xmasflag(year = 2020, language = "catalan")
-xmasflag(year = 2020, language = "spanish")
 }
 }
 \author{

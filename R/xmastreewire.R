@@ -11,9 +11,7 @@
 #' @author Jose Barrera-Gomez.
 #' @examples
 #' \donttest{
-#' xmastreewire()
-#' xmastreewire(year = 2020, language = "catalan")
-#' xmastreewire(year = 2020, language = "spanish", seed = 666)
+#' xmastreewire(year = 2020, language = "catalan", seed = 666)
 #' }
 #' @export
 

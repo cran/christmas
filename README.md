@@ -4,7 +4,6 @@
 # christmas
 
 <!-- badges: start -->
-
 <!-- badges: end -->
 
 This is a collection of R Christmas cards, which has been writen

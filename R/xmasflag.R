@@ -11,9 +11,7 @@
 #' @author Jose Barrera-Gomez.
 #' @examples
 #' \donttest{
-#' xmasflag()
 #' xmasflag(year = 2020, language = "catalan")
-#' xmasflag(year = 2020, language = "spanish")
 #' }
 #' @export
 
@@ -42,7 +40,8 @@ xmasflag <- function(year = 2016,
   plot(c(xmin, xmax), c(ymin, ymax), type = "n", asp = 1, axes = F, xlab = "", ylab = "")
   polygon(c(xmin, xmin, xmax, xmax), c(ymin, ymax, ymax, ymin), border = NA, col = "azure2")
   snow(x0 = xmin, x1 = xmax, y0 = ymin, y1 = ymax)
-  Sys.sleep(1)
+  t0 <- 0.3
+  Sys.sleep(t0)
   polygon(c(-4, 4, 4, -4), c(1.6, 1.6, 8, 8), border = "forestgreen", col = "forestgreen", lwd = 2)
   snow(x0 = xmin, x1 = xmax, y0 = ymin, y1 = ymax)
   n <- 100
@@ -56,8 +55,8 @@ xmasflag <- function(year = 2016,
   B <- (ln - l1) / (n - 1)
   A <- l1 - B
   ls <- A + B * (1:n)
-  t <- 0.03
-  Sys.sleep(1)
+  t <- 0.02
+  Sys.sleep(t0)
   sapply(1:(n - 1), FUN = function(i) { bar(theta = as[i], l = ls[i], col = "forestgreen", lwd = 7)
                                         Sys.sleep(t)
                                         bar(theta = as[i], l = ls[i], col = "azure2", lwd = 8)
@@ -67,7 +66,7 @@ xmasflag <- function(year = 2016,
   snow(x0 = xmin, x1 = xmax, y0 = ymin, y1 = ymax)
   polygon(c(-4, 4, 4, -4), c(1.6, 1.6, 8, 8), border = "forestgreen", col = "white", lwd = 7)
   snow(x0 = xmin, x1 = xmax, y0 = ymin, y1 = ymax)
-  t <- 0.2
+  t <- 0.15
   year <- unlist(strsplit(as.character(year), ""))
   year <- c(year, "!")
   d <- 0.8
@@ -75,7 +74,7 @@ xmasflag <- function(year = 2016,
   y1 <- 6
   x2 <- -1.5
   y2 <- 4
-  Sys.sleep(1)
+  Sys.sleep(t0)
   mess <- switch(language,
                  english = "HAPPY...",
                  spanish = "FELIZ...",

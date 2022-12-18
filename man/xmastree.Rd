@@ -27,9 +27,7 @@ A random naive Christmas tree (2008 card).
 }
 \examples{
 \donttest{
-xmastree()
-xmastree(year = 2020, language = "catalan")
-xmastree(year = 2020, language = "spanish", seed = 666)
+xmastree(year = 2020, language = "catalan", seed = 666)
 }
 }
 \author{

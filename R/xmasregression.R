@@ -13,13 +13,13 @@
 #' @examples
 #' \donttest{
 #' xmasregression()
-#' xmasregression(year = 2021, language = "catalan", time = 5)
+#' xmasregression(year = 2021, language = "catalan", time = 2)
 #' }
 #' @export
 
 xmasregression <- function(year = 2020,
                            language = c("english", "spanish", "catalan"),
-                           time = 12,
+                           time = 4,
                            seed = NULL) {
   # "year":
   if (!inherits(year, c("numeric", "integer")) || length(year) != 1L)

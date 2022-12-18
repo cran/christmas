@@ -23,7 +23,6 @@ A statistical/epidemiological Christmas tree (2016 card). This
 \examples{
 \donttest{
 xmasepitree()
-xmasepitree(year = 2020)
 }
 }
 \author{

@@ -39,11 +39,9 @@ Christmas trees (2017 card) with different shapes.
 }
 \examples{
 \donttest{
-xmastreeshape()
 xmastreeshape(shape = "oval", language = "catalan", ballscolor = "blue")
 xmastreeshape(shape = "vshaped", nballs = 15, ballscolor = c("sienna2", "yellow2", "tomato"),
               seed = 1111)
-xmastreeshape(shape = "round", language = "spanish")
 xmastreeshape(shape = "columnar", nballs = 20, ballscolor = "red")
 }
 }

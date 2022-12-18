@@ -17,11 +17,9 @@
 #' @author Jose Barrera-Gomez.
 #' @examples
 #' \donttest{
-#' xmastreeshape()
 #' xmastreeshape(shape = "oval", language = "catalan", ballscolor = "blue")
 #' xmastreeshape(shape = "vshaped", nballs = 15, ballscolor = c("sienna2", "yellow2", "tomato"),
 #'               seed = 1111)
-#' xmastreeshape(shape = "round", language = "spanish")
 #' xmastreeshape(shape = "columnar", nballs = 20, ballscolor = "red")
 #' }
 #' @export
@@ -82,10 +80,10 @@ xmastreeshape <- function(year = 2018,
   ##############
   for(i in 1:40) {
     snow(np = 20, x0 = xmin, x1 = xmax, y0 = ymin, y1 = ymax)
-    Sys.sleep(0.1)
+    Sys.sleep(0.07)
    }
   ##############
-  Sys.sleep(0.5)
+  Sys.sleep(0.3)
   mess <- switch(language,
                  english = "Happy ",
                  spanish = "Feliz ",
@@ -93,6 +91,6 @@ xmastreeshape <- function(year = 2018,
   myvfont <- c("serif", "bold")
   text(x = 0, y = 3, labels = paste0(mess, year, "!"), vfont = myvfont, cex = 2, col = "red")
   ##############
-  Sys.sleep(1)
+  Sys.sleep(0.3)
   text(x = 0, y = 2.1, labels = "R", srt = 15, vfont = myvfont, cex = 3, col = "gold")
  }

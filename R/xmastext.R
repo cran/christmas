@@ -13,8 +13,7 @@
 #' @author Jose Barrera-Gomez.
 #' @examples
 #' \donttest{
-#' xmastext()
-#' xmastext(year = 2020, language = "spanish", seed = 666)
+#' xmastext(year = 2011, language = "spanish", seed = 666)
 #' }
 #' @export
 
@@ -31,7 +30,7 @@ xmastext <- function(year = 2011,
   if(!is.null(seed) & (is.na(seed) || !is(seed, "numeric")))
     stop("'seed' must be numeric or NULL")
   if (!is.null(seed)) set.seed(seed)
-  totalTime <- 12
+  totalTime <- 4
   minTime <- 0.005
   maxTime <- 0.5
   mess <- switch(language,

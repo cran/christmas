@@ -331,3 +331,31 @@ plotTreeColumnar <- function(nballs, ballscolor) {
 }
 
 
+################################################################################
+################################################################################
+###
+###  auxiliar functions for xmaspicasso
+###
+################################################################################
+################################################################################
+
+drawbird <- function(x, y, type = c("loess", "poly", "poly2"), col = "red",
+                     lwd = 4) {
+  rx <- 3.5
+  ry <- 3
+  x <- rx * x
+  y <- ry * y
+  dd <- data.frame(x, y)
+  l <- length(x)
+  w <- rep(1, l)
+  w[c(1, l)] <- 3
+  dd$w <- w
+  mod <- switch(type,
+                loess = loess(y ~ x, data = dd, weights = w),
+                poly = lm(y ~ x + I(x^2) + I(x^3), weights = w, data = dd),
+                poly2 = lm(y ~ x + I(x^2), weights = w, data = dd))
+  xv <- seq(min(x), max(x), length.out = 50)
+  pred <- predict(mod, newdata = data.frame(x = xv))
+  lines(xv, pred, col = col, lwd = lwd)
+}
+

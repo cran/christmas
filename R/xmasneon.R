@@ -1,6 +1,7 @@
 #' @title Neon Christmas card.
 #'
-#' @description Christmas card using a neon sign. It only works for wishing 2014.
+#' @description Christmas card using a neon sign (2013 card). It only works for
+#'   wishing 2014.
 #'
 #' @param language Language to be used in the card. One of \code{c("english",
 #'   "spanish", "catalan")}. Default is \code{"english"}.
@@ -14,17 +15,16 @@
 #' @author Jose Barrera-Gomez.
 #' @examples
 #' \donttest{
-#' xmasneon2014()
-#' xmasneon2014(language = "catalan", nflash = 10, pause = 0.3)
-#' xmasneon2014(language = "spanish", nflash = 8, pause = 1)
-#' xmasneon2014(nflash = 100, pause = 0.02)
+#' xmasneon()
+#' xmasneon(language = "catalan", nflash = 10, pause = 0.05)
+#' xmasneon(nflash = 100, pause = 0.01)
 #' }
 #' @export
 
-xmasneon2014 <- function(language = c("english", "spanish", "catalan"),
-                         nflash = 30,
-                         pause = 0.1,
-                         seed = NULL) {
+xmasneon <- function(language = c("english", "spanish", "catalan"),
+                     nflash = 30,
+                     pause = 0.1,
+                     seed = NULL) {
   # "language":
   language <- match.arg(language)
   # "nflash":
@@ -57,16 +57,14 @@ xmasneon2014 <- function(language = c("english", "spanish", "catalan"),
   x <- runif(lms, min = 3, max = 18)
   y <- runif(lms, min = 2, max = 8)
   col.text <- sample(c("red", "green", "yellow", "blue", "brown"), lms)
-  for (i in 1:lms)
-   {
-   	Sys.sleep(0.3)
+  for (i in 1:lms) {
+   	Sys.sleep(0.2)
     points(x[i], y[i], pch = 19, cex = 20, col = "cyan")
-   	Sys.sleep(0.5)
+   	Sys.sleep(0.3)
    	text(x[i], y[i], ms[i], col = col.text[i], cex = 3, font = 1)
   }
-  Sys.sleep(1.5)
-  for (i in 1:nflash)
-   {
+  Sys.sleep(0.6)
+  for (i in 1:nflash) {
    	cols <- sample(c(2:4, 6:7), 2)
     col <- cols[1] + (cols[2] - cols[1]) * d$front
     pchf <- sample(c(15, 19), 1)
@@ -76,13 +74,3 @@ xmasneon2014 <- function(language = c("english", "spanish", "catalan"),
     Sys.sleep(pause)
    }
 }
-
-
-# Usage:
-#
-# nflash: number of flashes
-# pause: elapsed time between two pictures (seconds)
-#
-# Examples:
-#
-

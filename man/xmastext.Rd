@@ -29,8 +29,7 @@ A random repetition of a message (2010 card). Random allocation
 }
 \examples{
 \donttest{
-xmastext()
-xmastext(year = 2020, language = "spanish", seed = 666)
+xmastext(year = 2011, language = "spanish", seed = 666)
 }
 }
 \author{

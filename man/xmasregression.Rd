@@ -7,7 +7,7 @@
 xmasregression(
   year = 2020,
   language = c("english", "spanish", "catalan"),
-  time = 12,
+  time = 4,
   seed = NULL
 )
 }
@@ -31,7 +31,7 @@ A plot of the Christmas regression model (2019 card).
 \examples{
 \donttest{
 xmasregression()
-xmasregression(year = 2021, language = "catalan", time = 5)
+xmasregression(year = 2021, language = "catalan", time = 2)
 }
 }
 \author{

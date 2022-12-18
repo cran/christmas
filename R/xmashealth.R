@@ -36,7 +36,6 @@ xmashealth <- function(year = 2012, seed = NULL) {
   newwindow()
   op <- par(mfrow = c(1, 2), las = 1, oma = c(0, 0, 2, 0))
   on.exit(par(op))
-  #  par(mfrow = c(1, 2), las = 1, oma = c(0, 0, 2, 0))
   op
   mu0 <- 115
   mu1 <- 165
