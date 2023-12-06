@@ -1,7 +1,7 @@
 Package: christmas
 Type: Package
 Title: Generation of Different Animated Christmas Cards
-Version: 1.2.0
+Version: 1.3.0
 Depends: R (>= 4.1)
 Imports: animation (>= 2.6), grDevices, graphics, stats, methods
 Suggests: testthat
@@ -16,8 +16,8 @@ URL: https://sites.google.com/view/josebarrera/
 Encoding: UTF-8
 RoxygenNote: 7.2.3
 NeedsCompilation: no
-Packaged: 2022-12-18 17:34:04 UTC; jose
+Packaged: 2023-12-06 16:59:11 UTC; jose
 Author: Jose Barrera-Gomez [aut, cre] (<https://orcid.org/0000-0002-2688-6036>)
 Maintainer: Jose Barrera-Gomez <jose.barrera@isglobal.org>
 Repository: CRAN
-Date/Publication: 2022-12-18 17:50:02 UTC
+Date/Publication: 2023-12-06 18:20:11 UTC

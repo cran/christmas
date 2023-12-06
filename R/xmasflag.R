@@ -35,7 +35,6 @@ xmasflag <- function(year = 2016,
   ymax <- 10
   op <- par(family = "HersheySerif")
   on.exit(par(op))
-  #  par(family = "HersheySerif")
   op
   plot(c(xmin, xmax), c(ymin, ymax), type = "n", asp = 1, axes = F, xlab = "", ylab = "")
   polygon(c(xmin, xmin, xmax, xmax), c(ymin, ymax, ymax, ymin), border = NA, col = "azure2")
