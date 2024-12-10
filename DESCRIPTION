@@ -1,12 +1,12 @@
 Package: christmas
 Type: Package
 Title: Generation of Different Animated Christmas Cards
-Version: 1.3.0
+Version: 1.4.0
 Depends: R (>= 4.1)
-Imports: animation (>= 2.6), grDevices, graphics, stats, methods
+Imports: animation (>= 2.7), grDevices, graphics, stats, methods
 Suggests: testthat
 Authors@R: person(given = "Jose", family = "Barrera-Gomez", role = c("aut", "cre"),
-                  email = "jose.barrera@isglobal.org",
+                  email = "jose.barrera@uab.cat",
                   comment = c(ORCID = "0000-0002-2688-6036"))
 Description: Generation of different Christmas cards, most of them being
     animated. Most of the cards can be generated in three languages (English,
@@ -14,10 +14,10 @@ Description: Generation of different Christmas cards, most of them being
 License: GPL-2
 URL: https://sites.google.com/view/josebarrera/
 Encoding: UTF-8
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.2
 NeedsCompilation: no
-Packaged: 2023-12-06 16:59:11 UTC; jose
+Packaged: 2024-12-10 12:54:54 UTC; jose
 Author: Jose Barrera-Gomez [aut, cre] (<https://orcid.org/0000-0002-2688-6036>)
-Maintainer: Jose Barrera-Gomez <jose.barrera@isglobal.org>
+Maintainer: Jose Barrera-Gomez <jose.barrera@uab.cat>
 Repository: CRAN
-Date/Publication: 2023-12-06 18:20:11 UTC
+Date/Publication: 2024-12-10 14:30:02 UTC

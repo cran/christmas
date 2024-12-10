@@ -16,7 +16,7 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Jose Barrera-Gomez \email{jose.barrera@isglobal.org} (\href{https://orcid.org/0000-0002-2688-6036}{ORCID})
+\strong{Maintainer}: Jose Barrera-Gomez \email{jose.barrera@uab.cat} (\href{https://orcid.org/0000-0002-2688-6036}{ORCID})
 
 }
 \keyword{internal}

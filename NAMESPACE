@@ -3,6 +3,7 @@
 export(xmascaganer)
 export(xmasepitree)
 export(xmasflag)
+export(xmasfractaltree)
 export(xmasgalton)
 export(xmashealth)
 export(xmashelix)

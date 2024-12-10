@@ -6,7 +6,7 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-This is a collection of R Christmas cards, which has been writen
+This is a collection of R Christmas cards, which has been written
 annually since 2008. Most of the cards are animated.
 
 ## Installation

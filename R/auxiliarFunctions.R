@@ -359,3 +359,49 @@ drawbird <- function(x, y, type = c("loess", "poly", "poly2"), col = "red",
   lines(xv, pred, col = col, lwd = lwd)
 }
 
+
+################################################################################
+################################################################################
+###
+###  auxiliar function for xmasfractaltree
+###  (generate the points of a fractal tree).
+###  A adapted from
+###  http://blogs.sas.com/content/iml/2012/12/14/a-fractal-christmas-tree/
+###
+################################################################################
+################################################################################
+fractaltree <- function(npoints = 1e5) {
+  # define matrices for transformation (L) and traslation (B):
+  L <- matrix(c( 0.03,     0,    0, 0.10,
+                 0.85,     0,    0, 0.85,
+                 0.80,     0,    0, 0.80,
+                 0.20, -0.08, 0.15, 0.22,
+                 -0.20,  0.08, 0.15, 0.22,
+                 0.25, -0.10, 0.12, 0.25,
+                 -0.20,  0.10, 0.12, 0.20),
+              nrow = 4)
+
+  B <- matrix(0, nrow = 2, ncol = 7)
+  B[2, 2:3] <- 1.5
+  B[2, 4:5] <- 0.85
+  B[2, 6:7] <- c(0.3, 0.4)
+
+  # probabilities to choose transformationS:
+  probs <- c(0.02, 0.6, 0.08, 0.07, 0.07, 0.07, 0.07)
+
+  # number of iterations:
+  N <- npoints  # number of points to be generated
+
+  # initialize the matrix to store the tree:
+  x <- matrix(NA, nrow = 2, ncol = N)
+  x[, 1] <- c(0, 2)  # origin
+
+  # set transformations randomly:
+  k <- sample(1:7, N, prob = probs, replace = TRUE)
+
+  # generation of the points:
+  for (i in 2:N)
+    x[, i] <- crossprod(matrix(L[, k[i]], nrow = 2), x[, i - 1]) + B[, k[i]]
+
+  return(x)
+}
